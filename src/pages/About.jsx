@@ -1,4 +1,5 @@
-import { Typography, Container, Box, Paper, Grid } from '@mui/material';
+import { Typography, Container, Box, Paper, Grid, Button } from '@mui/material';
+import DownloadIcon from '@mui/icons-material/Download';
 
 const About = () => {
     const skills = ['React', 'JavaScript', 'Material UI', 'Node.js', 'Playwright', 'Git', 'Azure', 'CI/CD'];
@@ -13,6 +14,19 @@ const About = () => {
                     I am a passionate Full Stack Developer with a focus on building efficient and user-friendly web applications.
                     With a strong foundation in modern web technologies, I love transforming ideas into reality through code.
                 </Typography>
+
+                <Box sx={{ mt: 3, mb: 6 }}>
+                    <Button
+                        variant="outlined"
+                        size="large"
+                        startIcon={<DownloadIcon />}
+                        href="/Michaela_Lee_Resume_v2.pdf"
+                        download
+                        sx={{ px: 4, py: 1.5, fontSize: '1.1rem' }}
+                    >
+                        Download Resume
+                    </Button>
+                </Box>
 
                 <Box sx={{ mt: 6 }}>
                     <Typography variant="h4" gutterBottom>

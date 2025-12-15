@@ -1,63 +1,99 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, alpha } from '@mui/material/styles';
 
 const theme = createTheme({
     palette: {
         mode: 'dark',
+        background: {
+            default: '#111111', // Dark Charcoal
+            paper: '#141414',
+        },
         primary: {
-            main: '#bb86fc', // Premium violet
+            main: '#00F0FF', // Electric Cyan
         },
         secondary: {
-            main: '#03dac6', // Teal
-        },
-        background: {
-            default: '#121212', // Deep dark background
-            paper: '#1e1e1e',   // Card background
+            main: '#FF0055', // Neon Pink
         },
         text: {
-            primary: '#ffffff',
-            secondary: 'rgba(255, 255, 255, 0.7)',
+            primary: '#FFFFFF',
+            secondary: '#666666', // Dim Grey for code comments
         },
+        divider: alpha('#00F0FF', 0.12),
     },
     typography: {
         fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
         h1: {
-            fontSize: '3rem',
-            fontWeight: 700,
+            fontWeight: 900,
+            letterSpacing: '-0.02em',
         },
         h2: {
-            fontSize: '2.5rem',
-            fontWeight: 600,
+            fontWeight: 700,
+            letterSpacing: '-0.01em',
         },
         h3: {
-            fontSize: '2rem',
+            fontWeight: 700,
+        },
+        h4: {
             fontWeight: 600,
         },
+        h5: {
+            fontWeight: 600,
+        },
+        h6: {
+            fontWeight: 600,
+        },
+        fontFamilyMonospace: '"Fira Code", "Roboto Mono", monospace',
         button: {
-            textTransform: 'none',
+            fontFamily: '"Fira Code", "Roboto Mono", monospace',
             fontWeight: 600,
         },
     },
     components: {
         MuiButton: {
+            defaultProps: {
+                variant: 'outlined',
+            },
             styleOverrides: {
                 root: {
-                    borderRadius: 8,
+                    borderRadius: 0, // Sharp edges for brutalist look
+                    textTransform: 'none',
+                    borderWidth: '2px',
+                    borderColor: '#00F0FF',
+                    color: '#00F0FF',
+                    '&:hover': {
+                        backgroundColor: '#00F0FF',
+                        color: '#000000',
+                        borderWidth: '2px',
+                        borderColor: '#00F0FF',
+                    },
+                },
+                outlined: {
+                    borderWidth: '2px',
+                    borderColor: '#00F0FF',
                 },
             },
         },
-        MuiPaper: {
+        MuiCssBaseline: {
             styleOverrides: {
-                root: {
-                    backgroundImage: 'none', // Remove default overlay in dark mode for cleaner look
+                body: {
+                    scrollbarColor: '#00F0FF #111111',
+                    '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
+                        backgroundColor: '#111111',
+                        width: '8px',
+                    },
+                    '&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb': {
+                        borderRadius: 0,
+                        backgroundColor: '#00F0FF',
+                        minHeight: 24,
+                    },
                 },
             },
         },
         MuiAppBar: {
             styleOverrides: {
                 root: {
-                    backgroundColor: 'rgba(18, 18, 18, 0.8)',
+                    backgroundColor: alpha('#111111', 0.8),
                     backdropFilter: 'blur(12px)',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
+                    borderBottom: '1px solid rgba(0, 240, 255, 0.1)',
                 },
             },
         },
