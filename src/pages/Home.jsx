@@ -50,7 +50,7 @@ const Home = () => {
                         </Typography>
 
                         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mb: 5, fontFamily: 'monospace', fontSize: '1.1rem', borderLeft: '2px solid #333', pl: 3 }}>
-                            // Building modern, scalable, and responsive web applications.
+                            // Transforming complex business workflows into scalable, automated full-stack solutions.
                             <br />
                             const status = "Open to work";
                         </Typography>
