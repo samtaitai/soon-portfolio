@@ -27,10 +27,10 @@ const Footer = () => {
                         © {new Date().getFullYear()} Soyon. All rights reserved.
                     </Typography>
                     <Box>
-                        <IconButton color="inherit" aria-label="GitHub">
+                        <IconButton color="inherit" aria-label="GitHub" href="https://github.com/samtaitai" target="_blank">
                             <GitHubIcon />
                         </IconButton>
-                        <IconButton color="inherit" aria-label="LinkedIn">
+                        <IconButton color="inherit" aria-label="LinkedIn" href="https://www.linkedin.com/in/soyonlee/" target="_blank">
                             <LinkedInIcon />
                         </IconButton>
                     </Box>

@@ -51,8 +51,6 @@ const Home = () => {
 
                         <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 600, mb: 5, fontFamily: 'monospace', fontSize: '1.1rem', borderLeft: '2px solid #333', pl: 3 }}>
                             // Transforming complex business workflows into scalable, automated full-stack solutions.
-                            <br />
-                            const status = "Open to work";
                         </Typography>
 
                         <Box sx={{ display: 'flex', gap: 3 }}>

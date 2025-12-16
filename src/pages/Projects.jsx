@@ -1,35 +1,40 @@
-import { Typography, Container, Grid, Card, CardContent, CardActions, Button, CardMedia, Chip, Box } from '@mui/material';
+import { useState } from 'react';
+import { Typography, Container, Grid, Card, CardContent, CardActions, Button, CardMedia, Chip, Box, Modal, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
+import CloseIcon from '@mui/icons-material/Close';
 
 const projects = [
     {
-        title: 'Portfolio Website',
-        description: 'A responsive static portfolio built with React and Material UI. Showcases my work and skills with a modern dark theme.',
-        image: 'https://source.unsplash.com/random/800x600/?code,laptop',
-        tags: ['React', 'MUI', 'Vite', 'CI/CD'],
-        repo: 'https://github.com/soyon/portfolio',
-        demo: 'https://soyon.dev',
+        title: 'Document Processor',
+        description: 'An AI-powered cloud-based document processing system that automatically extracts, analyzes, and provides intelligent insights from uploaded documents using Google Gemini AI.',
+        image: '/doc-processor-screenshot.png',
+        tags: ['Azure Function', 'Vue.js', 'Node.js', 'Google Gemini AI'],
+        repo: 'https://github.com/samtaitai/document_processor',
+        demo: 'https://proud-wave-0731f330f.3.azurestaticapps.net',
     },
     {
-        title: 'E-Commerce Dashboard',
-        description: 'A comprehensive dashboard for managing products, orders, and users. Features real-time data visualization and dark mode.',
-        image: 'https://source.unsplash.com/random/800x600/?dashboard,tech',
-        tags: ['Next.js', 'Typescript', 'Tailwind', 'Supabase'],
-        repo: '#',
-        demo: '#',
-    },
-    {
-        title: 'Task Management API',
-        description: 'RESTful API for task management with authentication, rate limiting, and comprehensive test coverage.',
-        image: 'https://source.unsplash.com/random/800x600/?server,cloud',
-        tags: ['Node.js', 'Express', 'PostgreSQL', 'Jest'],
-        repo: '#',
-        demo: '#',
-    },
+        title: 'Argo CD Example Apps',
+        description: 'A comprehensive demonstration repository showcasing ArgoCD functionality, including GitOps workflows, monitoring with Prometheus and Grafana, RBAC implementation, and progressive delivery strategies using Argo Rollouts.',
+        image: '/argo-cd-logo.png',
+        tags: ['Argo CD', 'Kubernetes', 'GitOps', 'Prometheus', 'Grafana'],
+        repo: 'https://github.com/samtaitai/argocd-example-apps',
+        demo: null,
+    }
 ];
 
 const Projects = () => {
+    const [open, setOpen] = useState(false);
+    const [selectedImage, setSelectedImage] = useState('');
+
+    const handleOpen = (image) => {
+        setSelectedImage(image);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
     return (
         <Container maxWidth="lg">
             <Box sx={{ py: 8 }}>
@@ -61,7 +66,9 @@ const Projects = () => {
                                         backgroundImage: `url(${project.image})`,
                                         backgroundSize: 'cover',
                                         backgroundPosition: 'center',
+                                        cursor: 'pointer',
                                     }}
+                                    onClick={() => handleOpen(project.image)}
                                 />
                                 <CardContent sx={{ flexGrow: 1 }}>
                                     <Typography gutterBottom variant="h5" component="h2" fontWeight={600}>
@@ -80,15 +87,64 @@ const Projects = () => {
                                     <Button size="small" startIcon={<GitHubIcon />} href={project.repo} target="_blank">
                                         Code
                                     </Button>
-                                    <Button size="small" startIcon={<LaunchIcon />} href={project.demo} target="_blank">
-                                        Demo
-                                    </Button>
+                                    {project.demo && (
+                                        <Button size="small" startIcon={<LaunchIcon />} href={project.demo} target="_blank">
+                                            Demo
+                                        </Button>
+                                    )}
                                 </CardActions>
                             </Card>
                         </Grid>
                     ))}
                 </Grid>
             </Box>
+            <Modal
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="image-modal"
+                aria-describedby="full-size-project-image"
+                sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    backdropFilter: 'blur(5px)',
+                }}
+            >
+                <Box sx={{
+                    position: 'relative',
+                    maxWidth: '90vw',
+                    maxHeight: '90vh',
+                    outline: 'none',
+                    borderRadius: 2,
+                    overflow: 'hidden',
+                    boxShadow: 24,
+                }}>
+                    <IconButton
+                        onClick={handleClose}
+                        sx={{
+                            position: 'absolute',
+                            top: 8,
+                            right: 8,
+                            color: 'white',
+                            bgcolor: 'rgba(0,0,0,0.5)',
+                            '&:hover': {
+                                bgcolor: 'rgba(0,0,0,0.7)',
+                            },
+                        }}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                    <img
+                        src={selectedImage}
+                        alt="Project Full Size"
+                        style={{
+                            maxWidth: '100%',
+                            maxHeight: '90vh',
+                            display: 'block',
+                        }}
+                    />
+                </Box>
+            </Modal>
         </Container>
     );
 };
