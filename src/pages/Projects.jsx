@@ -6,6 +6,14 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const projects = [
     {
+        title: 'YouTube Transcript Summarizer',
+        description: 'An AI-powered application that automatically generates concise summaries for YouTube videos. It utilizes an agentic workflow to retrieve video transcripts and process them using Large Language Models (LLMs) hosted on Azure',
+        image: '/youtube_screenshot.png',
+        tags: ['Azure AI Agent', 'Azure App Service', 'Python', 'Supadata', 'Streamlit'],
+        repo: 'https://github.com/samtaitai/YouTube_summerizer',
+        demo: 'https://youtubesummarizer-g0hgb7f2deeqhfaf.canadacentral-01.azurewebsites.net',
+    },
+    {
         title: 'Document Processor',
         description: 'An AI-powered cloud-based document processing system that automatically extracts, analyzes, and provides intelligent insights from uploaded documents using Google Gemini AI.',
         image: '/doc-processor-screenshot.png',
