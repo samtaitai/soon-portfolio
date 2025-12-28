@@ -7,7 +7,8 @@ const About = () => {
         'C#', '.NET Framework', 'Node.js', 'Python', 'MSSQL Server', 'Oracle SQL', 'ETL',
         'RESTful APIs', 'Serverless Functions',
         'AKS', 'ACR', 'Azure Functions', 'Azure Static Web Apps', 'Docker', 'Kubernetes',
-        'Azure DevOps', 'GitHub Actions', 'Terraform', 'ArgoCD', 'Git', 'Google Gemini API'
+        'Azure DevOps', 'GitHub Actions', 'Terraform', 'ArgoCD', 'Git', 'Google Gemini API',
+        'Azure AI Agent', 'Azure App Service'
     ];
 
     return (
@@ -27,7 +28,7 @@ const About = () => {
                         variant="outlined"
                         size="large"
                         startIcon={<DownloadIcon />}
-                        href="/Michaela_Lee_Resume_v2.pdf"
+                        href="/Michaela_Lee_Resume_v3.pdf"
                         download
                         sx={{ px: 4, py: 1.5, fontSize: '1.1rem' }}
                     >
