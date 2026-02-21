@@ -6,6 +6,14 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const projects = [
     {
+        title: 'Switch-On Diet Recipe Generator',
+        description: 'Switch-On Recipe Maker is an AI-powered culinary assistant that utilizes Gemini 2.5 Pro and RAG-based logic to generate diet-compliant, phase-specific recipes in English and Korean from your available ingredients.',
+        image: '/switch-on-recipe-maker.jpg',
+        tags: ['Google Gemini 2.5 Pro', 'RAG', 'Python', 'Firebase', 'React', 'Tailwind'],
+        repo: 'https://github.com/samtaitai/diet-recipe-maker',
+        demo: 'https://switchon-recipe-maker.web.app',
+    },
+    {
         title: 'YouTube Transcript Summarizer',
         description: 'An AI-powered application that automatically generates concise summaries for YouTube videos. It utilizes an agentic workflow to retrieve video transcripts and process them using Large Language Models (LLMs) hosted on Azure',
         image: '/youtube_screenshot.png',
