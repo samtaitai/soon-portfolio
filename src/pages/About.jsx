@@ -28,7 +28,7 @@ const About = () => {
                         variant="outlined"
                         size="large"
                         startIcon={<DownloadIcon />}
-                        href="/Michaela_Lee_Resume_v3.pdf"
+                        href="/Michaela_Lee_Resume_v4.pdf"
                         download
                         sx={{ px: 4, py: 1.5, fontSize: '1.1rem' }}
                     >
